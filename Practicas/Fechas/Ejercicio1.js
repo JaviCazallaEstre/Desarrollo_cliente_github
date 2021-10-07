@@ -49,4 +49,11 @@ function anyosFecha(fechaString) {
 function restaFechas(fechaString1, fechaString2) {
   var fecha1 = toFecha(fechaString1);
   var fecha2 = toFecha(fechaString2);
+  var diferencia = Math.floor(fecha1.getTime() - fecha2.getTime());
+  var dia = 1000 * 60 * 60 * 24;
+  var dias = Math.floor(diferencia / dia);
+  var meses = Math.floor(dias / 31);
+  var anyos = Math.floor(months / 12);
+  var mensaje =
+    "Hace " + anyos + " años, " + meses + " meses y " + dias + " días";
 }
