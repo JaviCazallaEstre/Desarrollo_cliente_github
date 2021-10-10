@@ -5,15 +5,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
+    <script src="practica1.js"></script>
   </head>
   <body>
     <form action="" , method="POST">
       <label for="eleccion">Empresa</label>
-      <input type="radio" name="eleccion" id="eleccion" value="Empresa" />
+      <input
+        type="radio"
+        name="eleccion"
+        id="eleccion.empresa"
+        value="Empresa"
+      />
       &nbsp; &nbsp;&nbsp; &nbsp;
       <label for="eleccion">Persona</label>
-      <input type="radio" name="eleccion" id="eleccion" value="Persona" />
-      
+      <input
+        type="radio"
+        name="eleccion"
+        id="eleccion.persona"
+        value="Persona"
+      />
+      <br />
+      <br />
+      <label for="CIF">CIF:</label>
+      <input type="text" name="CIF" id="CIF" />
+      <br />
+      <br />
+      <label for="razon">Raz&oacute;n social:</label>
+      <input type="text" name="razon" id="razon" />
+      <br />
+      <br />
+      <label for="DNI">DNI:</label>
+      <input type="text" name="DNI" id="DNI" />
+      <br />
+      <br />
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" />
+      <br />
+      <br />
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" name="apellidos" id="apellidos" />
+      <br />
+      <br />
+      <label for="codigoPostal">C&oacute;digo postal: </label>
+      <input type="text" name="codigoPostal" id="codigoPostal" />
+      <br />
+      <br />
+      <label for="direccion">Direccion:</label>
+      <input type="text" name="direccion" id="direccion" />
+      <br />
+      <br />
+      <label for="municipio">Municipio:</label>
+      <input type="text" name="municipio" id="municipio" />
+      <br />
+      <br />
+      <label for="provincia">Provincia:</label>
+      <input type="text" name="provincia" id="provincia" />
+      <br />
+      <br />
+      <label for="fechaNac">Fecha de nacimiento:</label>
+      <input type="text" name="fechaNac" id="fechaNac" />
+      <br />
+      <br />
+      <label for="fechaCarnet">Fecha de carnet:</label>
+      <input type="text" name="fechaCarnet" id="fechaCarnet" />
+      <br />
+      <br />
+      <label for="telefono">Tel&eacute;fono:</label>
+      <input type="number" name="telefono" id="telefono" maxlength="9" />
+      <br />
+      <br />
+      <label for="matricula">Matricula:</label>
+      <input type="text" name="matricula" id="matricula" />
+      <br />
+      <br />
+      <label for="marca">Marca:</label>
+      <input type="text" name="marca" id="marca" />
+      <br />
+      <br />
+      <label for="modelo">Modelo:</label>
+      <input type="text" name="modelo" id="modelo" />
+      <br />
+      <br />
+      <label for="cilindrada">Cilindrada:</label>
+      <input type="number" name="cilindrada" id="cilindrada" maxlength="4" />
+      <br />
+      <br />
+      <label for="puertas">Puertas:</label>
+      <input type="number" name="puertas" id="puertas" maxlength="1" />
+      <br />
+      <br />
+      <label for="extras">Extras:</label>
+      <textarea id="extras"></textarea>
+      <br />
+      <br />
+      <button type="submit" id="enviar">Enviar</button>
     </form>
   </body>
 </html>
