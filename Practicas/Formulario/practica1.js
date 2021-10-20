@@ -41,6 +41,7 @@ function anyosFecha(fechaString1, fechaString2) {
   return edad;
 }
 window.addEventListener("load", function () {
+  debugger;
   var dniInput = document.getElementById("DNI");
   var nombreInput = document.getElementById("nombre");
   var apellidosInput = document.getElementById("apellidos");
