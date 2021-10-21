@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/validaciones.js"></script>
+    <script src="js/tabla.js"></script>
+</head>
+<body>
+    <p>
+        <form id="frm1">
+            <label>DNI</label>
+            <input type="text" name="dni">
+            <label>Nombre</label>
+            <input type="text" name="nombre">
+            <label>Edad</label>
+            <input type="text" name="edad">
+            <input type="button" name="insertar" value="Añadir">
+        </form>
+    </p>
+    <table editable="">
+        <thead>
+            <tr><th>DNI</th><th>Nombre</th><th>Edad</th></tr>
+        </thead>
+        <tbody id="tabla">
+            <tr><td>11111111H</td>
+                <td>Pedro</td>
+                <td>18</td>
+            </tr>
+            <tr><td>12345678Z</td>
+                <td>Antonio</td>
+                <td>16</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

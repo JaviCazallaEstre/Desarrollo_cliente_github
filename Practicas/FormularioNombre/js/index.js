@@ -47,7 +47,7 @@ window.addEventListener("load", function () {
       tr.appendChild(td4);
       tbody.appendChild(tr);
       botonBorrar.addEventListener("click", function () {
-        botonBorrar.parentNode.parentNode.remove();
+        botonBorrar.parentElement.parentElement.remove();
       });
     }
   });
