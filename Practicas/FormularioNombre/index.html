@@ -4,34 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/validaciones.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <link href="css/index.css"
-      rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/validaciones.js"></script>
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
     <title>Document</title>
   </head>
   <body>
-      <form id="formulario">
-        <label for="dni">DNI:</label>
-        <input type="text" id="dni" name="dni"/>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"/>
-        <label>Edad:</label>
-        <input type="text" id="edad" name="edad"/>
-        <input type="button" id="enviar" value="Enviar"/>
-      </form>
-      <br/>
-      <br/>
-    <table border="solid" id="tabla">
-      <thead id="cabecera">
-        <tr id="columna">
-          <th id="celdaDni">DNI</th>
-          <th id="celdaNombre">Nombre</th>
-          <th id="celdaEdad">Edad</th>
-          <th id="celdaFoto">Acci&oacute;n</th>
+    <form id="formulario">
+      <label>DNI</label>
+      <input type="text" name="dni" />
+      <label>Nombre</label>
+      <input type="text" name="nombre" />
+      <label>Edad</label>
+      <input type="text" name="edad" />
+      <input type="button" name="insertar" value="Añadir" />
+    </form>
+    <br />
+    <br />
+    <table editable="">
+      <thead>
+        <tr>
+          <th>DNI</th>
+          <th>Nombre</th>
+          <th>Edad</th>
         </tr>
       </thead>
-      <tbody id="cuerpo"></tbody>
+      <tbody id="tabla"></tbody>
     </table>
   </body>
 </html>

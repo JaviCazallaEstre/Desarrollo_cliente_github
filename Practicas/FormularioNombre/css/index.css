@@ -1,3 +1,28 @@
-.error{
-    border-color: red;
+.error {
+  border-color: red;
+}
+.boton {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  background-image: url("../imagenes/icon-sprite-7.jpg");
+}
+.borrar {
+  background-position-x: -136px;
+  background-position-y: -78px;
+}
+
+.editar {
+  background-position-x: -2px;
+  background-position-y: -130px;
+}
+
+.guardar {
+  background-position-x: -82px;
+}
+.cancelar {
+  background-position-y: -156px;
 }
