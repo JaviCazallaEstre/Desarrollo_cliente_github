@@ -27,8 +27,16 @@ HTMLSelectElement.prototype.ordenar = function () {
   return this;
 };
 
-HTMLSelectElement.prototype.quitarSeleccion=function(){
-    for(let i=0;i<this.length;i++){
-        this.children[i].selected=false;
-    }
+HTMLSelectElement.prototype.quitarSeleccion = function () {
+  for (let i = 0; i < this.length; i++) {
+    this.children[i].selected = false;
+  }
+};
+
+HTMLSelectElement.prototype.generaJSON = function () {
+  vector = [];
+  for (let i = 0; i < this.children.length; i++) {
+    vector.push({ "value": i, "text": this.children[i].innerHTML });
+  }
+  JSON.stringify(vector);
 };
