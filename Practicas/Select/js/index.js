@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
   };
 
   botonDerecha.onclick = function () {
-    seleccionados.agregar(alumnos)
+    seleccionados.agregar(alumnos);
   };
   botonIzquierda.onclick = function () {
     alumnos.agregar(seleccionados);
