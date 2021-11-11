@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <form method="post" id="formulario" action="php/responder.php">
+      <table>
+        <tr>
+          <td><label for="usuario">Nombre:</label></td>
+          <td><input type="text" id="usuario" name="usuario" /></td>
+        </tr>
+        <tr>
+          <td><label for="mensaje">Mensaje:</label></td>
+          <td><textarea id="mensaje" name="mensaje"></textarea></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" id="boton" name="boton" value="Enviar" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <div id="contenedor"></div>
+  </body>
+</html>
