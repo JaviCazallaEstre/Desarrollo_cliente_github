@@ -28,6 +28,7 @@ window.addEventListener("load", function () {
     ajax.send(texto);
   };
   function pedirMensaje() {
+    const ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
       if (ajax.readyState == 4 && ajax.status == 200) {
         var respuesta = JSON.parse(ajax.responseText);

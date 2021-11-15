@@ -1,4 +1,6 @@
 <?php
 include_once("BD.php");
 bd::creaConexion();
-if()
+$mensajes=array();
+$mensajes=bd::sacaMensajes();
+echo json_encode($mensajes);
