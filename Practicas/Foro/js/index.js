@@ -85,18 +85,17 @@ window.addEventListener("load", function () {
     const div4 = document.createElement("div");
     div4.className = "mensaje";
     div4.innerHTML = mensaje.mensaje;
-    const div5 = document.createElement("div");
-    if () { 
+    div1.appendChild(div2);
+    div1.appendChild(div3);
+    div1.appendChild(div4);
+    if (mensaje.foto !=null) {
+      debugger;
+      const div5 = document.createElement("div"); 
       const foto = document.createElement("img");
       imagen=new Image();
       imagen.src='data:image/png;base64,'+mensaje.foto;
       div5.className = "foto";
       div5.appendChild(imagen);
-    }
-    div1.appendChild(div2);
-    div1.appendChild(div3);
-    div1.appendChild(div4);
-    if (mensaje.hasOwnProperty("foto")) {
       div1.appendChild(div5);
     }
     return div1;
