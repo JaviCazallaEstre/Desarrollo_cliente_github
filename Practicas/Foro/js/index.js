@@ -4,45 +4,71 @@ window.addEventListener("load", function () {
   const contenedor = document.getElementById("contenedor");
   var usuario = document.getElementById("usuario");
   var mensaje = document.getElementById("mensaje");
-  var ultimo=0;
-  var tmp1=setInterval(pedirMensaje,5000)
+  var ultimo = 0;
+  var foto = document.getElementById("foto");
+  var tmp1 = setInterval(pedirMensajes, 5000);
   enviar.onclick = function (ev) {
     ev.preventDefault();
-    if (usuario.value != "" && mensaje.value != "") {
-      var texto = encodeURI(
-        "boton=&usuario=" + usuario.value + "&mensaje=" + mensaje.value
-      );
+    debugger;
+    if (/^image\//.test(foto.files[0].type)) {
+      var reader = new FileReader();
+      imagen = reader.readAsDataURL(foto.files[0]);
     }
-    const ajax = new XMLHttpRequest();
-    ajax.onreadystatechange = function () {
-      if (ajax.readyState == 4 && ajax.status == 200) {
-        var respuesta = ajax.responseText;
-        if (respuesta == "OK") {
-          form["mensaje"].value = "";
-          form["mensaje"].focus();
-        }
+    if (usuario.value != "" && mensaje.value != "") {
+      /*var texto = encodeURI(
+        "boton=&usuario=" +
+          usuario.value +
+          "&mensaje=" +
+          mensaje.value +
+          "&foto=" +
+          imagen
+      );*/
+      let formu = new FormData();
+      formu.append("boton", "");
+      formu.append("usuario", usuario.value);
+      formu.append("mensaje", mensaje.value);
+      if (/^image\//.test(foto.files[0].type)) {
+        formu.append("foto", foto.files[0]);
       }
-    };
-    ajax.open("POST", "php/responder.php");
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    ajax.send(texto);
+
+      const ajax = new XMLHttpRequest();
+      ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+          var respuesta = ajax.responseText;
+          if (respuesta == "OK") {
+            form["mensaje"].value = "";
+            form["mensaje"].focus();
+            form["foto"].value = "";
+          }
+        }
+      };
+      ajax.open("POST", "php/responder.php");
+      ajax.send(formu);
+    }
   };
-  function pedirMensaje() {
+  function pedirMensajes() {
     const ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
       if (ajax.readyState == 4 && ajax.status == 200) {
         var respuesta = JSON.parse(ajax.responseText);
         if (respuesta.mensajes.length > 0) {
-          for (let i = 0; i < respuesta.mensaje.length; i++) {
-            var div = crearContenido(respuesta.mensajes[i], usuario);
-            contenedor.appendChild(div);
-            contenedor.scrollTop = contenedor.scrollHeight;
+          for (let i = 0; i < respuesta.mensajes.length; i++) {
+            var div = crearContenido(respuesta.mensajes[i], usuario.value);
+            if (
+              contenedor.scrollHeight - contenedor.scrollTop <
+              contenedor.clientHeight + 10
+            ) {
+              contenedor.appendChild(div);
+              contenedor.scrollTop = contenedor.scrollHeight;
+            } else {
+              contenedor.appendChild(div);
+            }
           }
         }
-        (ultimo = respuesta.mensajes), ultimo;
+        ultimo = respuesta.ultimo;
       }
     };
-    ajax.open("GET", "php/pedir.php=" + ultimo);
+    ajax.open("GET", "php/pedir.php?ultimo=" + ultimo);
     ajax.send();
   }
 
@@ -59,8 +85,20 @@ window.addEventListener("load", function () {
     const div4 = document.createElement("div");
     div4.className = "mensaje";
     div4.innerHTML = mensaje.mensaje;
+    const div5 = document.createElement("div");
+    if () { 
+      const foto = document.createElement("img");
+      imagen=new Image();
+      imagen.src='data:image/png;base64,'+mensaje.foto;
+      div5.className = "foto";
+      div5.appendChild(imagen);
+    }
     div1.appendChild(div2);
     div1.appendChild(div3);
     div1.appendChild(div4);
+    if (mensaje.hasOwnProperty("foto")) {
+      div1.appendChild(div5);
+    }
+    return div1;
   }
 });
