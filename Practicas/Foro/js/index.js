@@ -9,20 +9,11 @@ window.addEventListener("load", function () {
   var tmp1 = setInterval(pedirMensajes, 5000);
   enviar.onclick = function (ev) {
     ev.preventDefault();
-    debugger;
     if (/^image\//.test(foto.files[0].type)) {
       var reader = new FileReader();
       imagen = reader.readAsDataURL(foto.files[0]);
     }
     if (usuario.value != "" && mensaje.value != "") {
-      /*var texto = encodeURI(
-        "boton=&usuario=" +
-          usuario.value +
-          "&mensaje=" +
-          mensaje.value +
-          "&foto=" +
-          imagen
-      );*/
       let formu = new FormData();
       formu.append("boton", "");
       formu.append("usuario", usuario.value);
@@ -89,9 +80,7 @@ window.addEventListener("load", function () {
     div1.appendChild(div3);
     div1.appendChild(div4);
     if (mensaje.foto !=null) {
-      debugger;
       const div5 = document.createElement("div"); 
-      const foto = document.createElement("img");
       imagen=new Image();
       imagen.src='data:image/png;base64,'+mensaje.foto;
       div5.className = "foto";
